@@ -1,0 +1,13 @@
+@keyframes fhero-flap-in { 
+  0% { opacity: 0; transform: translateY(100%) rotateX(75deg); }
+  55% { opacity: 1; transform: translateY(-6%) rotateX(-12deg); }
+  80% { transform: translateY(2%) rotateX(4deg); }
+  100% { transform: translateY(0px) rotateX(0deg); }
+}
+@keyframes scroll { 
+  100% { transform: translate(calc(-50% - 0.5rem)); }
+}
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}

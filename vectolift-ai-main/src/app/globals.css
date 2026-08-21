@@ -1,0 +1,540 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@source "./";
+
+/* Tailwind theme: color tokens (so bg-primary/text-foreground resolve to our vars) +
+   breakpoints. @theme inline keeps the var() reference (theme-swappable at runtime). */
+@theme inline {
+  --breakpoint-vp375: 375px;
+  --breakpoint-vp768: 768px;
+  --breakpoint-vp1280: 1280px;
+  --breakpoint-vp1920: 1920px;
+  --breakpoint-md: 572px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-2xl: 1601px;
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-color-001: var(--color-001);
+  --color-color-002: var(--color-002);
+  --color-clr-0: var(--clr-0);
+  --color-surface-2: var(--surface-2);
+  --color-color-004: var(--color-004);
+  --color-clr-1: var(--clr-1);
+  --color-color-003: var(--color-003);
+  --color-primary: var(--primary);
+  --color-clr-2: var(--clr-2);
+  --color-clr-3: var(--clr-3);
+  --color-clr-4: var(--clr-4);
+  --color-clr-5: var(--clr-5);
+  --color-clr-6: var(--clr-6);
+  --color-border: var(--border);
+  --color-clr-7: var(--clr-7);
+  --color-clr-8: var(--clr-8);
+  --color-clr-9: var(--clr-9);
+  --color-surface: var(--surface);
+  --color-clr-10: var(--clr-10);
+  --color-clr-11: var(--clr-11);
+  --color-clr-12: var(--clr-12);
+  --color-clr-13: var(--clr-13);
+  --color-clr-14: var(--clr-14);
+  --color-clr-15: var(--clr-15);
+  --color-clr-16: var(--clr-16);
+}
+
+/* Design tokens (values). */
+:root {
+  --background: rgb(14, 14, 19);
+  --foreground: rgb(255, 250, 234);
+  --primary: rgb(0, 205, 143);
+  --border: rgba(120, 144, 140, 0.5);
+  --surface: lab(95.4877 -0.175536 2.05871 / 0.2);
+  --surface-2: oklab(0.999994 0.0000455678 0.0000200868 / 0.1);
+  --color-001: rgb(255, 255, 255);
+  --color-002: rgb(0, 0, 0);
+  --color-003: rgb(17, 16, 19);
+  --color-004: oklab(0 0 0 / 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* fonts */
+  --font-body: avantt, "avantt Fallback";
+  --font-001: foundryGridnik, "foundryGridnik Fallback";
+  /* fontSizes */
+  --font-size-001: 12px;
+  --font-size-002: 14px;
+  --font-size-003: 15px;
+  --font-size-004: 16px;
+  --font-size-005: 18px;
+  --font-size-006: 20px;
+  --font-size-007: 24px;
+  --font-size-008: 40px;
+  /* fontWeights */
+  --font-weight-001: 400;
+  --font-weight-002: 500;
+  --font-weight-003: 600;
+  /* lineHeights */
+  --line-height-001: 24px;
+  --line-height-002: 21.4286px;
+  --line-height-003: 20.8px;
+  --line-height-004: 21.6px;
+  --line-height-005: 40px;
+  --line-height-006: 14.4px;
+  --line-height-007: 14px;
+  --line-height-008: 12px;
+  --line-height-009: 19.2px;
+  --line-height-010: 15px;
+  --line-height-011: 26px;
+  --line-height-012: 28.8px;
+  --line-height-013: 13.2px;
+  /* spacing */
+  --space-001: 4px;
+  --space-002: 8px;
+  --space-003: 10px;
+  --space-004: 16px;
+  --space-005: 24px;
+  --space-006: 32px;
+  --space-007: 40px;
+  --space-008: 72px;
+  --space-009: 80px;
+  --space-010: 96px;
+  /* radii */
+  --radius-001: 3.35544e+07px;
+  --radius-002: 4px;
+  --radius-003: 6px;
+  --radius-004: 12px;
+  /* zIndices */
+  --z-001: 10;
+  /* breakpoints */
+  --bp-375: 375px;
+  --bp-768: 768px;
+  --bp-1280: 1280px;
+  --bp-1920: 1920px;
+}
+
+:root {
+  --clr-0: rgba(0, 0, 0, 0);
+  --clr-1: rgb(232, 230, 227);
+  --clr-2: rgba(0, 0, 0, 0.15);
+  --clr-3: rgba(0, 0, 0, 0.45);
+  --clr-4: oklab(0 0 0 / 0.3);
+  --clr-5: oklab(0.999994 0.0000455678 0.0000200868 / 0.22);
+  --clr-6: rgb(251, 251, 251);
+  --clr-7: rgb(39, 39, 42);
+  --clr-8: rgb(42, 42, 42);
+  --clr-9: oklab(0 0 0 / 0.5);
+  --clr-10: oklab(0 0 0 / 0.32);
+  --clr-11: oklab(0.999994 0.0000455678 0.0000200868 / 0.16);
+  --clr-12: rgba(255, 255, 255, 0.35);
+  --clr-13: oklab(0 0 0 / 0.2);
+  --clr-14: oklab(0.999994 0.0000455678 0.0000200868 / 0.5);
+  --clr-15: rgb(20, 184, 166);
+  --clr-16: rgb(16, 16, 16);
+}
+
+@layer base {
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid currentColor; }
+html { -webkit-text-size-adjust: 100%; line-height: normal; }
+body { margin: 0; }
+ul, ol, menu { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea, optgroup { font: inherit; color: inherit; background: transparent; border: 0; padding: 0; margin: 0; text-align: inherit; letter-spacing: inherit; }
+button { cursor: pointer; }
+table { border-collapse: separate; border-spacing: 0; }
+img, picture, video, canvas, svg { display: inline-block; }
+/* Lottie runtime fit: the player re-mounts its svg/canvas into an absolute overlay that fills
+   the host's captured (per-viewport, definite) box. Force that runtime media to fit the box so
+   an aspect-mismatched viewBox (e.g. a portrait animation in a shorter, letterboxed source box)
+   can't inflate past the pinned height. Scoped to the runtime-marked host only. */
+[data-ditto-lottie] > div > svg, [data-ditto-lottie] > div > canvas { width: 100%; height: 100%; display: block; }
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd { margin: 0; }
+/* Neutralize UA text defaults to inherit so the generator's default-skipping is
+   correct: a property equal to its inherited value is simply not emitted. */
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+b, strong, th { font-weight: inherit; }
+em, i, cite, var, dfn, address, q { font-style: inherit; }
+small, big, sub, sup { font-size: inherit; }
+sub, sup { vertical-align: inherit; }
+code, kbd, samp, pre, tt, var { font-family: inherit; font-size: inherit; }
+mark { background-color: transparent; color: inherit; }
+abbr[title] { text-decoration: none; }
+fieldset, legend { min-width: 0; }
+
+/* fonts */
+@font-face {
+  font-family: "ImpactCustom";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/Impact.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/b20579bffb28.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/b45398ada55a.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/1e2fe0a23894.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/f45bc474f392.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/407a6d10aeb7.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/04bd39f3f4fc.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "avantt Fallback";
+  src: local("Arial");
+  ascent-override: 92.77%;
+  descent-override: 24.32%;
+  line-gap-override: 0%;
+  size-adjust: 107.89%;
+}
+
+@font-face {
+  font-family: "foundryGridnik";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/fc4aaf457f37.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/73b87c57fdc9.woff2") format("woff2");
+  unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/d94058f9f61a.woff2") format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/32c33fd56190.woff2") format("woff2");
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/738fb84c7e48.woff2") format("woff2");
+  unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/e8f80efe75bd.woff2") format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/2db178be6868.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/73b87c57fdc9.woff2") format("woff2");
+  unicode-range: U+460-52F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/d94058f9f61a.woff2") format("woff2");
+  unicode-range: U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/32c33fd56190.woff2") format("woff2");
+  unicode-range: U+2000-2001,U+2004-2008,U+200A,U+23B8-23BD,U+2500-259F;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/738fb84c7e48.woff2") format("woff2");
+  unicode-range: U+102-103,U+110-111,U+128-129,U+168-169,U+1A0-1A1,U+1AF-1B0,U+300-301,U+303-304,U+308-309,U+323,U+329,U+1EA0-1EF9,U+20AB;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/e8f80efe75bd.woff2") format("woff2");
+  unicode-range: U+100-2BA,U+2BD-2C5,U+2C7-2CC,U+2CE-2D7,U+2DD-2FF,U+304,U+308,U+329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/2db178be6868.woff2") format("woff2");
+  unicode-range: U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/d1d6c187f721.woff2") format("woff2");
+  unicode-range: U+460-52F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/1046130883b4.woff2") format("woff2");
+  unicode-range: U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/b22de3452015.woff2") format("woff2");
+  unicode-range: U+102-103,U+110-111,U+128-129,U+168-169,U+1A0-1A1,U+1AF-1B0,U+300-301,U+303-304,U+308-309,U+323,U+329,U+1EA0-1EF9,U+20AB;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/6eef2c171dd6.woff2") format("woff2");
+  unicode-range: U+100-2BA,U+2BD-2C5,U+2C7-2CC,U+2CE-2D7,U+2DD-2FF,U+304,U+308,U+329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/33378d7ce856.woff2") format("woff2");
+  unicode-range: U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/dfe10507dc6c.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/7348ff50e2dc.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/c15ad679134d.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/2a142f6b1292.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/ae8c3af6a419.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "seasonSans";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/assets/cloned/fonts/e635b72b34ba.woff2") format("woff2");
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+html, body { overflow-x: clip; }
+}
+
+.legal-html {
+  color: #595959;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.legal-html h1,
+.legal-html h2,
+.legal-html h3 {
+  color: #000;
+  display: block;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.legal-html h1 {
+  font-size: 2rem;
+}
+
+.legal-html h2 {
+  font-size: 1.35rem;
+}
+
+.legal-html h3 {
+  font-size: 1.1rem;
+}
+
+.legal-html a {
+  color: #003afa;
+  word-break: break-word;
+}
+
+.legal-html ul,
+.legal-html ol {
+  list-style-position: outside;
+  margin: 0.75rem 0 0.75rem 1.25rem;
+}
+
+.legal-html ul {
+  list-style-type: square;
+}
+
+.legal-html ol {
+  list-style-type: decimal;
+}
+
+/* ── Blog article typography ── */
+.prose-blog p {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.prose-blog a {
+  color: rgb(0, 205, 143);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.prose-blog a:hover {
+  color: rgb(0, 168, 117);
+}
+
+.prose-blog strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin: 0.75rem 0 1rem 1.25rem;
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.prose-blog ul {
+  list-style-type: disc;
+}
+
+.prose-blog ol {
+  list-style-type: decimal;
+}
+
+.prose-blog li {
+  margin-bottom: 0.35rem;
+}
+
+.blog-article-body .prose-blog p:last-child {
+  margin-bottom: 0;
+}

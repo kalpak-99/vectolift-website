@@ -1,0 +1,38 @@
+Effective Date: August 11, 2026
+
+1. Who We Are
+Vectolift is an AI receptionist service for home service businesses.
+Website: www.vectolift.com.
+
+2. What Information We Collect
+Website visitors: IP address, browser type, and non-identifying analytics.
+
+Clients: Business contact information and configuration data.
+
+Callers to our AI agents: When a caller contacts a Client's number handled by our AI, we temporarily process the audio. The AI asks for explicit consent to record. Even without consent, basic call information, such as phone number and timestamp, is processed by our telephone system for routing purposes and may be passed to the Client.
+
+3. How We Use Information
+We use information to:
+
+- Provide the Service, including answering calls and booking appointments.
+- Bill Clients.
+- Improve the Service using aggregated, anonymised data only.
+
+We do not sell personal data.
+
+4. Data Sharing
+We share data only with sub-processors necessary for the Service, including Retell AI, Twilio, ElevenLabs, and Cal.com, under strict data protection terms.
+
+5. Data Storage & Security
+Call recordings and transcripts are stored encrypted on secure cloud servers. Retention periods are defined in Client agreements.
+
+6. Your Rights
+Callers should contact the business they called, our Client, for access, correction, or deletion. Website visitors and Clients may contact us directly.
+
+7. Cookies
+Our website may use cookies for analytics. You can disable them.
+
+8. Changes
+We will update this policy as needed.
+
+Contact: privacy@vectolift.com
