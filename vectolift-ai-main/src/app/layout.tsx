@@ -6,15 +6,17 @@ import { SITE_ORIGIN } from "../lib/site";
 
 export const metadata = {
   "metadataBase": new URL(SITE_ORIGIN || "http://localhost:3000"),
-  "title": "Vectolift - Never Miss Another Call",
-  "description": "Your AI receptionist answers every call, books jobs, and sounds like your best team member — 24/7, without missing a beat. Built for Australian home service businesses.",
+   "title": "AI Receptionist for Plumbers in Australia | Vectolift",
+   "description": "Never miss a plumber call. AI receptionist for Ausralian plumbers answers 24/7, books jobs & handles emergency calls.",
   "keywords": [
     "AI Receptionist",
     "Voice AI",
     "Home Services AI",
     "AI Call Answering",
     "Trade Business AI",
-    "Australian Voice AI"
+    "Australian Voice AI",
+    "Plumber Answering Service Australia",
+    "24/7 Plumber Call Answering",
   ],
   "robots": "index, follow",
   "alternates": {
